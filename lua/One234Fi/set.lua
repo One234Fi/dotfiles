@@ -14,6 +14,8 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
+
+-- HOME on linux and USERPROFILE on win
 vim.opt.undodir = os.getenv("USERPROFIlE") .. "/.vim/undodir"
 vim.opt.undofile = true
 
