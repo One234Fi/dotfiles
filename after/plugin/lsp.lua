@@ -1,5 +1,9 @@
 local lsp = require('lsp-zero').preset({})
 
+require('lspconfig').glslls.setup{}
+-- TODO: check this out if glslls sucks, needs zig compiler
+-- require('lspconfig').glsl_analyzer.setup{}
+
 lsp.ensure_installed({
 	'tsserver',
 	'lua_ls',
