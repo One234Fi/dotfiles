@@ -1,15 +1,15 @@
 local lsp = require('lsp-zero').preset({})
 
 require('lspconfig').glslls.setup{}
--- TODO: check this out if glslls sucks, needs zig compiler
+-- check this out if glslls sucks, needs zig compiler
 -- require('lspconfig').glsl_analyzer.setup{}
 
 lsp.ensure_installed({
 	'tsserver',
-	'lua_ls',
-	'angularls',
+	'rust_analyzer',
+	'cssls',
+	'html',
 	'jdtls',
-	'rust_analyzer'
 })
 
 local cmp = require('cmp')
@@ -17,12 +17,15 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true }),
+	['<C-y>'] = cmp.mapping.confirm( {select = true} ),
 	['<C-Space>'] = cmp.mapping.complete(),
 })
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
+})
+lsp.set_preferences({
+	sign_icons = { } 
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -41,3 +44,5 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+

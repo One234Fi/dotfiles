@@ -14,9 +14,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-
--- HOME on linux and USERPROFILE on win
-vim.opt.undodir = os.getenv("USERPROFIlE") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
@@ -33,3 +31,12 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+-- stolen from quickstart.nvim
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "highlight when yanking text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})

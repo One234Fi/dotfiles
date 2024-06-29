@@ -1,1 +1,1 @@
-require("One234Fi")
+require('One234Fi')

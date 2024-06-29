@@ -25,8 +25,6 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
--- idk what anything below this comment does yet tbh
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionaizer<CR>")
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
@@ -55,3 +53,9 @@ vim.keymap.set("n", "<leader>9", "9gt")
 vim.keymap.set("n", "<leader>0", "<cmd>tablast<CR>")
 
 vim.keymap.set("n", "<leader>b", "<cmd>ls<CR>:b<space>")
+
+
+vim.keymap.set("n", "<C-c>", "<Esc>");
+vim.keymap.set("i", "<C-c>", "<Esc>");
+vim.keymap.set("v", "<C-c>", "<Esc>");
+vim.keymap.set("x", "<C-c>", "<Esc>");

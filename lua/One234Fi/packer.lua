@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
     use('svenstaro/glsl-language-server')
     -- use('theprimeagen/vim-apm')
     -- use('theprimeagen/vim-be-good')
+
+    -- scala LSP
     -- use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
     
     use({
