@@ -1,11 +1,6 @@
 require("One234Fi.init")
 
--- TODO: 
---  lsp config
---      probably just gonna be lazy and use lsp-zero again
---  read more lazy documentation
---      look at lazy loading configs
-
--- stuff that might be cool:
+-- stuff that might be cool but I need to read about first:
+--  folke/todo-comments
 --  trouble.nvim
 --  outline.nvim
