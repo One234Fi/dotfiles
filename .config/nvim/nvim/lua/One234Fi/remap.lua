@@ -1,4 +1,6 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 
 -- highlighted text can be moved up and down with J or K
@@ -25,33 +27,14 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
--- idk what anything below this comment does yet tbh
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionaizer<CR>")
-vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
-end)
-
+-- location list
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 -- toggle the outline plugin
 vim.keymap.set("n", "<leader>to", "<cmd>Outline<CR>")
 
--- tabs
-vim.keymap.set("n", "<leader>1", "1gt")
-vim.keymap.set("n", "<leader>2", "2gt")
-vim.keymap.set("n", "<leader>3", "3gt")
-vim.keymap.set("n", "<leader>4", "4gt")
-vim.keymap.set("n", "<leader>5", "5gt")
-vim.keymap.set("n", "<leader>6", "6gt")
-vim.keymap.set("n", "<leader>7", "7gt")
-vim.keymap.set("n", "<leader>8", "8gt")
-vim.keymap.set("n", "<leader>9", "9gt")
-vim.keymap.set("n", "<leader>0", "<cmd>tablast<CR>")
-
+-- show buffers
 vim.keymap.set("n", "<leader>b", "<cmd>ls<CR>:b<space>")
