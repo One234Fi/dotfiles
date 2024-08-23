@@ -1,3 +1,4 @@
+```
 Configs for:
     i3
     tmux
@@ -8,3 +9,4 @@ Configs for:
 
 i3 also starts some programs and calls some xsettings
 bashrc also defines some XDG variables
+```
