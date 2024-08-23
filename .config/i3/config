@@ -22,7 +22,7 @@ font pango:Ubuntu Sans Mono 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/*
+exec --no-startup-id feh --no-fehbg --bg-scale --randomize ~/Pictures/wallpapers/*
 exec --no-startup-id picom -b
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
