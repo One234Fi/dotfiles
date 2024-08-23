@@ -24,6 +24,7 @@ font pango:Ubuntu Sans Mono 8
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id feh --no-fehbg --bg-scale --randomize ~/Pictures/wallpapers/*
 exec --no-startup-id picom -b
+exec xset r rate 180 30 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
