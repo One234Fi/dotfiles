@@ -19,8 +19,14 @@ shopt -s checkwinsize
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias xbindkeys="xbindkeys -fg $XDG_CONFIG_HOME/xbindkeys/config.scm"
 PS1='[\u@\h \W]\$ '
 
+
+
+export MANPATH="$MANPATH:/usr/local/texlive/2024/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2024/texmf-dist/doc/info"
+export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -32,3 +38,4 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+
