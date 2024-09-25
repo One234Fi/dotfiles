@@ -70,8 +70,7 @@
 
 (define (prefix-binding)
   "Prefix binding"
-  (xbindkey-function '(Mod4 a) command-binding)
-  )
+  (xbindkey-function '(Control a) command-binding))
 
 (define (reset-prefix-binding)
   (display-n "reset prefix")
@@ -101,6 +100,10 @@
                      (lambda ()
                        (run-command "firefox -private-window")
                        (reset-prefix-binding)))
+  (xbindkey-function '(Escape) 
+                     (lambda ()
+                       (ungrab-all-keys)
+                       (remove-all-keys)))
   (debug)
   (grab-all-keys))
 
