@@ -70,7 +70,8 @@
 
 (define (prefix-binding)
   "Prefix binding"
-  (xbindkey-function '(Control a) command-binding))
+  (xbindkey-function '(Control a) command-binding)
+  (xbindkey-function '(Control m) music-binding))
 
 (define (reset-prefix-binding)
   (display-n "reset prefix")
@@ -79,6 +80,7 @@
   (prefix-binding)
   (grab-all-keys))
 
+
 (define (command-binding)
   "Command binding"
   (display-n "Prefix hit")
@@ -86,7 +88,7 @@
   (remove-all-keys)
   (xbindkey-function '(l) 
                      (lambda ()
-                       (run-command "i3lock")
+                       (run-command "loginctl lock-session")
                        (reset-prefix-binding)))
   (xbindkey-function '(Shift l) 
                      (lambda ()
@@ -102,10 +104,41 @@
                        (reset-prefix-binding)))
   (xbindkey-function '(Escape) 
                      (lambda ()
+                       (display-n "escape a")
                        (ungrab-all-keys)
                        (remove-all-keys)))
   (debug)
   (grab-all-keys))
+
+(define (music-binding)
+  "Command binding"
+  (display-n "Prefix hit")
+  (ungrab-all-keys)
+  (remove-all-keys)
+  (xbindkey-function '(n) 
+                     (lambda ()
+                       (run-command "mpc next")
+                       (reset-prefix-binding)))
+  (xbindkey-function '(p) 
+                     (lambda ()
+                       (run-command "mpc prev")
+                       (reset-prefix-binding)))
+  (xbindkey-function '(t) 
+                     (lambda ()
+                       (run-command "mpc toggle")
+                       (reset-prefix-binding)))
+  (xbindkey-function '(o) 
+                     (lambda ()
+                       (run-command "alacritty -e 'ncmpcpp'")
+                       (reset-prefix-binding)))
+  (xbindkey-function '(Escape) 
+                     (lambda () 
+                       (display-n "escape m")
+                       (ungrab-all-keys)
+                       (remove-all-keys)))
+  (debug)
+  (grab-all-keys))
+
 
 (display-n "hello scheme")
 (prefix-binding)
