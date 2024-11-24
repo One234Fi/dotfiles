@@ -1,0 +1,10 @@
+#!/bin/bash
+
+qemu-system-x86_64 \
+    -cpu host \
+    -enable-kvm \
+    -m 4G \
+    -vga std \
+    -display gtk,grab-on-hover=off,show-menubar=off \
+    -drive if=pflash,format=raw,file=/home/qemu/OVMF_CODE.4m.fd \
+    -drive file=/home/qemu/dev-img.cow,format=qcow2 &
