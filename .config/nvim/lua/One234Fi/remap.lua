@@ -35,3 +35,5 @@ vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 
 -- show buffers
 vim.keymap.set("n", "<leader>b", "<cmd>ls<CR>:b<space>")
+
+vim.keymap.set("n", "<leader>xd", "<cmd>%!xxd<CR>")

@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -58,7 +58,7 @@ bindsym $mod+Return exec st
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -186,9 +186,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-default_border pixel
+default_border none
 hide_edge_borders both
 focus_follows_mouse no
+gaps inner 0px
+gaps outer 0px
 
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -200,4 +202,4 @@ bar {
         status_command i3status
 }
 
-workspace $ws6 output DP-1
+#for_window [all] fullscreen enable
